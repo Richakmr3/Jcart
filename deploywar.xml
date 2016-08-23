@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="execute"  basedir="." default="tomcat-restart">
+
+<description>Deploying the war into server..</description>
+
+<property name="tomcat.home" value="D:\Tomcat\Tomcat-7.0.62" />
+<property name="build" value="classes"/>
+	  <path id="includejars">
+	  	
+	<!--Path of jar files required for compilation of the project -->
+	      <fileset dir="D:\EclipseWorkspaces\EPPagain\Jcart\WebContent\WEB-INF\lib">
+	         <include name="*.jar"/>
+	      </fileset>
+	   	
+	   	<!--Path of JAR file required for  Web-Listener class -->
+	   	
+	 <fileset dir="D:\Tomcat\Tomcat-7.0.62\lib">
+	   	         <include name="servlet-api.jar"/>
+	   	      </fileset>
+	   </path>
+	   
+	<!--Script to compile the java classes -->
+	   <target name="compile" description="Compile main source tree java files">
+	   <mkdir dir="${build}"/>
+	      <javac destdir="${build}"  debug="true" fork="true" includeantruntime="false"
+	         deprecation="false" optimize="false" failonerror="true">
+	         <src path="src"/>
+	         <classpath refid="includejars"/>
+	      </javac>
+	   	<echo>Compiled...</echo>
+	   </target >
+	
+	<!--Script to create a war file -->
+	   	
+	<target name= "createwar" depends="compile" description= "Creates the WAR file">
+			<war destfile="D:\Tomcat\Tomcat-7.0.62\webapps\MyJcart.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"/>
+			<lib dir="WebContent/WEB-INF/lib"/>
+			<classes dir="build/classes"/>
+			<classes dir="src" />
+			</war>
+	
+		<echo>WAR file is created for the given project!!!</echo>
+	</target >
+	
+	<!--Script to start and stop the server -->
+	
+	  <target name="tomcat-restart" depends="createwar">
+	      	<antcall target="tomcat-stop" /> 
+	        <antcall target="tomcat-start" />
+	  </target>
+	 
+	  <target name="tomcat-start">
+	        <java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+	            <classpath path="${tomcat.home}/bin/bootstrap.jar:${tomcat.home}/bin/tomcat-juli.jar" />
+	            <jvmarg value="-Dcatalina.home=${tomcat.home}"/>
+	            <!--If you are getting any OutOfMemoryError, remove the comments 
+	            and enable jvm argument of the following line-->
+	            <!--jvmarg value="-XX:MaxPermSize=256m"/-->
+	        </java>
+	    	<echo>server started..</echo>
+	  </target>
+	 
+	  <target name="tomcat-stop">
+	        <java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+	            <classpath path="${tomcat.home}/bin/bootstrap.jar:${tomcat.home}/bin/tomcat-juli.jar" />
+	            <jvmarg value="-Dcatalina.home=${tomcat.home}"/>
+	            <arg line="stop"/>
+	        </java>
+	    	<echo>server stopped..</echo>
+	 </target>
+	
+	<!--Script to execute the jsp page-->
+	
+	<!-- <property name="file" value="http://localhost:8888/ANTwar" />
+	<target name="execute" depends="tomcat-restart" >
+			<echo>Executing</echo>
+		  <sleep seconds="5"/>
+			<exec executable="C:/Program Files/Internet Explorer/iexplore.exe" spawn="true">
+				<arg value="${file}/faces/pages/login.jsp" />
+			</exec>
+	</target>  -->
+	
+</project>

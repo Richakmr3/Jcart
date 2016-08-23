@@ -1,0 +1,136 @@
+Status Fields Description
+-----------------------------------
+
+JCART_LOGIN
+===========
+
+Login Role
+A	-	Admin
+U	-	User
+R	-	Retailer
+
+Login Status
+L	-	Locked	
+A	-	Active
+B	-	Blocked
+D	-	De-Active
+N	-	New Retailer
+R	-	Rejected Retailer
+
+
+
+JCART_PAYMENT
+=============
+
+PaymentType
+C	-	Card
+D	-	On Delivery
+E	-	EMI
+
+
+
+JCART_REGISTRATION
+==================
+
+MessageService
+Y	-	Yes
+N	-	No
+
+Gender
+M	-	Male
+F	-	Female
+
+
+
+JCART_RETAILERRATING AND JCART_PRODUCTRATING
+============================================
+
+Status
+A	-	Approved
+P	-	Pending
+
+
+
+JCART_USERPRODUCTREQUEST
+========================
+
+Status
+P	-	Pending
+A	-	Approved
+R	-	Rejected
+
+
+
+JCART_ISSUEDETAILS 
+==================
+
+Status
+A	-	Approved
+S	-	Submitted
+
+
+
+JCART_ORDERLOGTABLE
+===================
+
+DeliveryStatus
+S	-	Shipped
+P	-	Pending
+D	-	Delivered
+R	-	Returned
+
+
+
+JCART_PRODUCT
+=============
+
+ProductType
+N	-	New Product
+U	-	Used Product
+
+
+
+JCART_TELEVISION
+================
+
+HDReady
+Y	-	Yes
+N	-	No
+
+
+
+JCART_BAGS AND JCART_CLOTHING AND JCART_FOOTWEAR
+================================================
+
+IDealFor
+M	-	Male
+F	-	Female
+
+
+
+JCART_BOOKS
+===========
+
+TypeOfCover
+H	-	Hard
+S	-	Soft
+
+
+
+JCART_MOBILE
+============
+
+SIM
+D	-	Dual SIM
+S	-	Single SIM
+
+
+
+JCART_PRODUCTBID
+================
+
+Bid Status
+O	-	Open
+C	-	Close
+
+

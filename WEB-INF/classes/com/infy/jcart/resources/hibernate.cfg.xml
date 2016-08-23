@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- hibernate dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="hibernate.connection.username">JCART</property>
+		<property name="hibernate.connection.password">jcart</property>
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+		<!-- Automatic schema creation (begin) === -->
+		<property name="hibernate.hbm2ddl.auto">none</property>
+
+		<!-- Simple memory-only cache -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+
+		<!-- mapping resource="presentationtier/Person.hbm.xml"/ -->
+		<!-- mapping class="presentationtier.Employee"></mapping -->
+
+		<mapping class="com.infy.jcart.entites.LogDetailEntity" />
+		<mapping class="com.infy.jcart.entites.LoginEntity" />
+		<mapping class="com.infy.jcart.entites.UserWishListPK" />
+		<mapping class="com.infy.jcart.entites.UserWishListEntity" />
+		<mapping class="com.infy.jcart.entites.UserProductRequestEntity" />
+		<mapping class="com.infy.jcart.entites.UserPointsEntity" />
+		<mapping class="com.infy.jcart.entites.TelevisionEntity" />
+		<mapping class="com.infy.jcart.entites.SubCategoryEntity" />
+		<mapping class="com.infy.jcart.entites.RetailerRatingEntity" />
+		<mapping class="com.infy.jcart.entites.RegistrationEntity" />
+		<mapping class="com.infy.jcart.entites.ProductVariationsPK" />
+		<mapping class="com.infy.jcart.entites.ProductVariationsEntity" />
+		<mapping class="com.infy.jcart.entites.ProductRatingEntity" />
+		<mapping class="com.infy.jcart.entites.ProductOfferEntity" />
+		<mapping class="com.infy.jcart.entites.ProductEntity" />
+		<mapping class="com.infy.jcart.entites.ProductBidEntity" />
+		<mapping class="com.infy.jcart.entites.PaymentEntity" />
+		<mapping class="com.infy.jcart.entites.PaymentDetailsPK" />
+		<mapping class="com.infy.jcart.entites.PaymentDetailsEntity" />
+		<mapping class="com.infy.jcart.entites.OrderLogEntity" />
+		<mapping class="com.infy.jcart.entites.NewProductsEntity" />
+		<mapping class="com.infy.jcart.entites.MobileEntity" />
+		<mapping class="com.infy.jcart.entites.MessagesEntity" />
+		<mapping class="com.infy.jcart.entites.LoginEntity" />
+		<mapping class="com.infy.jcart.entites.LogDetailEntity" />
+		<mapping class="com.infy.jcart.entites.IssueDetailsEntity" />
+		<mapping class="com.infy.jcart.entites.FootWearEntity" />
+		<mapping class="com.infy.jcart.entites.EMIEntity" />
+		<mapping class="com.infy.jcart.entites.ComputersEntity" />
+		<mapping class="com.infy.jcart.entites.ClothingEntity" />
+		<mapping class="com.infy.jcart.entites.CategoryEntity" />
+		<mapping class="com.infy.jcart.entites.CameraEntity" />
+		<mapping class="com.infy.jcart.entites.BrowsingHistoryPK" />
+		<mapping class="com.infy.jcart.entites.BrowsingHistoryEntity" />
+		<mapping class="com.infy.jcart.entites.BooksEntity" />
+		<mapping class="com.infy.jcart.entites.BagsEntity" />
+
+
+
+	</session-factory>
+</hibernate-configuration>

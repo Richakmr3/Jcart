@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="invokeURL" basedir="." default="execute">
+
+	<property name="file" value="http://localhost:8921/MyJcart" />
+		<target name="execute">
+				<echo>Executing</echo>
+				<exec executable="C:/Program Files/Internet Explorer/iexplore.exe" spawn="true">
+					<arg value="${file}/faces/pages/login.jsp" />
+				</exec>
+		</target>
+		
+</project>
